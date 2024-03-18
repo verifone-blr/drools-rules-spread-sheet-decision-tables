@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="ConsoleLog" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} {%t} %-5level %logger{36} -%msg%n" />
+		</Console>
+
+		<File name="ErrorLog" fileName="./logs/error.log"
+			immediateFlush="true" append="true">
+			<PatternLayout
+				pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		<File name="ServerLog" fileName="./logs/server.log"
+			immediateFlush="true" append="true">
+			<PatternLayout
+				pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+
+		<File name="DroolsLog" fileName="./logs/DroolsInOut.log"
+			immediateFlush="true" append="true">
+			<PatternLayout
+				pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} -%n %msg%n" />
+		</File>
+
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="ConsoleLog" />
+		</Root>
+		<Logger name="error.logger" level="warn" additivity="false">
+			<AppenderRef ref="ErrorLog" level="warn" />
+		</Logger>
+		<Logger name="server.logger" level="info" additivity="false">
+			<AppenderRef ref="ServerLog" level="info" />
+			<AppenderRef ref="ConsoleLog" level="info" />
+		</Logger>
+		<Logger name="drools.logger" level="info" additivity="false">
+			<AppenderRef ref="DroolsLog" level="info" />
+		</Logger>
+	</Loggers>
+</Configuration>

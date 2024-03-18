@@ -14,7 +14,7 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 import com.verifone.drools.logger.aspect.GenericLogger;
 
 @Configuration
-public class DroolsConfig {
+public class AspectLoggerConfig {
 
    @Bean(name = "expressionParser")
    @Scope(scopeName = ConfigurableBeanFactory.SCOPE_PROTOTYPE)

@@ -10,6 +10,8 @@ public class EPFWithDrawForm {
 
    private Integer timesAllowed;
 
+   private String remarks;
+
    public String getPurpose() {
       return purpose;
    }
@@ -40,6 +42,14 @@ public class EPFWithDrawForm {
 
    public void setTimesAllowed(Integer timesAllowed) {
       this.timesAllowed = timesAllowed;
+   }
+
+   public String getRemarks() {
+      return remarks;
+   }
+
+   public void setRemarks(String remarks) {
+      this.remarks = remarks;
    }
 
 }
